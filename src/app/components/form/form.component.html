@@ -1,5 +1,24 @@
-<main>
-  <form>
+<main class="main-container">
+  <section class="container">
+    <h1 class="container__title">FORMULARIO CODERHOOUSE</h1>
+    <form class="container__form" [formGroup]="dataForm" (ngSubmit)="dataFormSubmit()">
+      <label for="firstName"></label><input formControlName="firstName" type="text" placeholder="Nombre">
+      <app-form-validators [controlForm]="firstName"></app-form-validators>
 
-  </form>
+      <label for="lastName"></label><input formControlName="lastName" type="text" placeholder="Apellido">
+      <app-form-validators [controlForm]="lastName"></app-form-validators>
+
+      <label for="dni"></label><input formControlName="dni" type="text" placeholder="Documento de Identificación">
+      <app-form-validators [controlForm]="dni"></app-form-validators>
+
+      <label for="email"></label><input formControlName="email" type="email" placeholder="Email">
+      <app-form-validators [controlForm]="email"></app-form-validators>
+
+      <label for="password"></label><input formControlName="password" type="password" placeholder="Contraseña">
+      <app-form-validators [controlForm]="password"></app-form-validators>
+
+      <button class="container__form-button" [disabled]="dataForm.invalid" type="submit">Enviar</button>
+
+    </form>
+  </section>
 </main>
